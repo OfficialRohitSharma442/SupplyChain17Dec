@@ -2,6 +2,8 @@ package com.example.supplychain17dec;
 
 import javafx.application.Application;
 //import javafx.fxml.FXMLLoader;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,34 +23,43 @@ public class HelloApplication extends Application {
        TextField searchText = new TextField();
        Button searchButton =  new Button("Search");
        GridPane gridPane = new GridPane();
-
-
        gridPane.setVgap(5);
        gridPane.setHgap(5);
        gridPane.setMinSize(bodyPane.getMinWidth(),headerBar-10);
        gridPane.setAlignment(Pos.CENTER);
-       gridPane.setStyle("-fx-background-color:#224952");
+//     gridPane.setStyle("-fx-background-color:#224952");
        gridPane.add(searchText,0,0);
-       gridPane.add(searchButton,0,1);
+       gridPane.add(searchButton,1,0);
        return gridPane;
    }
 
     private GridPane loginPage(){
         Label emailLabel = new Label("Email");
         Label passwordLabel = new Label("Password");
-
+        Label messsageLabel = new Label("Hello i am message");
         TextField emailTextField = new TextField();
         PasswordField  passwordField= new PasswordField();
+        Button loginButton = new Button("LogIn");
+        loginButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+             String email =emailTextField.getText();
+             String password = passwordField.getText();
+             messsageLabel.setText(email +"$$"+ password);
+            }
+        });
         GridPane gridPane = new GridPane();
         gridPane.setVgap(5);
         gridPane.setHgap(5);
         gridPane.setMinSize(bodyPane.getMinWidth(),bodyPane.getMinHeight());
         gridPane.setAlignment(Pos.CENTER);
-        gridPane.setStyle("-fx-background-color:#C0C0C0");
+//      gridPane.setStyle("-fx-background-color:#C0C0C0");
         gridPane.add(emailLabel,0,0);
         gridPane.add(emailTextField,1,0);
         gridPane.add(passwordLabel,0,1);
-         gridPane.add(passwordField,1,1);
+        gridPane.add(passwordField,1,1);
+        gridPane.add(loginButton,0,2);
+        gridPane.add(messsageLabel,1,2);
          return gridPane;
     }
 
