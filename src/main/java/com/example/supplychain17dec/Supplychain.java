@@ -1,5 +1,4 @@
 package com.example.supplychain17dec;
-
 import javafx.application.Application;
 //import javafx.fxml.FXMLLoader;
 import javafx.event.ActionEvent;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Supplychain extends Application {
     public static final int width = 700, height = 600, headerBar = 50;
     Pane bodyPane = new Pane();
 
@@ -59,7 +58,7 @@ public class HelloApplication extends Application {
         gridPane.add(emailTextField, 1, 0);
         gridPane.add(passwordLabel, 0, 1);
         gridPane.add(passwordField, 1, 1);
-        gridPane.add(loginButton, 0, 2);
+
         gridPane.add(messsageLabel, 1, 2);
         return gridPane;
     }
